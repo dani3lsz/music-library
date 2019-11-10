@@ -55,7 +55,7 @@ export default Component.extend({
     },
 
     newArtwork(files) {
-      var reader = new FileReader();
+      const reader = new FileReader();
 
       reader.onload = (e) => {
         this.set('album.artwork',e.target.result)
