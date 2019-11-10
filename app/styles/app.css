@@ -1,0 +1,2116 @@
+:root {
+  --hue: 260;
+  --color1: hsl(var(--hue),85%,65%);
+  --color105: hsla(var(--hue),85%,65%,.5);
+  --txt: #333;
+  --selection: #aaf2c2;
+  --grey: #888;
+  --grey02: rgba(128,128,128,.2);
+  --bezier: cubic-bezier(.25,.7,.4,1);
+  --box-shadow: 0 0 0 2px var(--grey02);
+  --card-shadow: 0 0 0 2px var(--grey02);
+  --color-shadow: 0 0 0 2px var(--color1);
+  --hover-shadow: 0 0 0 2px var(--color105);
+}
+
+/*
+ * BEFORE MODIFYING THIS DOCUMENT READ THIS DOCUMENTATION:
+ *
+ * http://cssguidelin.es/
+ *
+ * What differs from the guideline:
+ *
+ * - Use aa_ prefix for all classes
+ * - Indentations are 2px
+ * - Columns are 120px wide
+ * - Don't use [] in html inside class="" for grouping
+ * - In html class="" don't use 2 space between classes, but put the related ones next to each other
+ * - Low level commenting is not necessary but u can use, just try to explain the things u think is important
+ *
+ */
+
+/*
+ * RULES
+ *
+ *  == Basic rules ==
+ *
+ *  -) NORMALIZE.CSS
+ *
+ *  -) HTML5 BOILERPLATE
+ *
+ *  -) GLOBAL
+ *
+ *  == App specific ==
+ *
+ *
+ *
+ *  == Helpers ==
+ *
+ *  -) VISIBILITY
+ *
+ *  -) ALIGN
+ *
+ *  -) OPACITY
+ *
+ *  -) TEXT FORMATTING
+ *
+ *  -) BOX FORMATTING
+ *
+ *  -) COLORS
+ *
+ *  -) GRADIENTS
+ *
+ *  -) IMG CONTAINER
+ *
+ *  -) BG IMG CONTAINER
+ *
+ *  -) HOVER INFO
+ *
+ *  -) WAIT TO LOAD
+ *
+ *  -) MISCELLANEOUS
+ *
+ *  == Fonts ==
+ *
+ *  -) ICONS
+ *
+ */
+
+
+
+
+/*----------------*\
+   #NORMALIZE.CSS
+\*----------------*/
+
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+  background: var(--selection);
+  color: var(--txt);
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+  color: #999;
+  border-color: #999;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+  border: 0; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+
+
+
+
+/*---------------------*\
+   #HTML5 BOILERPLATE
+\*---------------------*/
+
+/*! HTML5 Boilerplate v5.0.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: var(--selection);
+  text-shadow: none;
+}
+
+::selection {
+  background: var(--selection);
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+
+
+
+
+/*----------*\
+   #GLOBAL
+\*----------*/
+
+
+a, address, area, article, aside, audio, base, bdi, bdo, blockquote, body, br, button, canvas, caption, cite, code,
+col, colgroup, datalist, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form,
+h1, h2, h3, h4, h5, h6, h6, head, header, html, i, iframe, img, input, ins, kbd, keygen, label, legend, li, link,
+map, main, mark, menu, meta, meter, nav, noscript, object, ol, optgroup, option, output, p, param, pre, progress, q, rp, rt, ruby,
+s, samp, section, select, small, source, span, strong, sub, summary, sup, svg, textarea, time, title, tr, track, u, ul, var, video, wbr{
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* setting default font size to 10px */
+  -webkit-tap-highlight-color: rgba(0,0,0,0); /* prevent highlight on tap */
+  -webkit-text-size-adjust: 100%; /* text may be inflated of this exact proportion on mobile browsers */
+}
+
+.aa_base--11 {font-size: 68.75%; /* setting default font size to 11px */}
+.aa_base--12 {font-size: 75%; /* setting default font size to 12px */}
+.aa_base--13 {font-size: 81.25%; /* setting default font size to 13px */}
+
+html, body {
+  height: 100%;
+  margin:  0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--txt);
+  /* Prevent user selection */
+  -webkit-user-select: none;
+          user-select: none;
+  cursor: default;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+button, select {
+  padding: 0;
+  border:  none;
+  outline: none;
+  background: transparent;
+  text-transform: none;
+}
+
+button, input[type='text'], input[type='submit'], textarea{
+  -webkit-appearance: none; /* prevent to change the look in webkit browsers to the default */
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+}
+
+button[disabled], input[disabled] {
+  cursor: default;
+}
+
+a {
+  color: var(--color1);
+  text-decoration: none;
+}
+
+a:active, a:focus, a:hover {
+  outline: 0;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6  {
+  font-weight: 400;
+  line-height: 1.25;
+  margin-top:    .5em;
+  margin-bottom: .5em;
+}
+
+h1, .h1 {font-size: 7rem}
+h2, .h2 {font-size: 2.4rem}
+h3, .h3 {font-size: 2.0rem}
+h4, .h4 {font-size: 1.8rem}
+h5, .h5 {font-size: 1.6rem}
+h6, .h6 {font-size: 1.4rem}
+
+@media only screen and (min-width: 480px) {
+  h1, .h1 {font-size: 9rem}
+  h2, .h2 {font-size: 2.8rem}
+  h3, .h3 {font-size: 2.2rem}
+}
+
+@media only screen and (min-width: 768px) {
+  h1, .h1 {font-size: 11rem}
+  h2, .h2 {font-size: 3.2rem}
+  h3, .h3 {font-size: 2.4rem}
+  h4, .h4 {font-size: 2.0rem}
+}
+
+@media only screen and (min-width: 1024px) {
+  h1, .h1 {font-size: 13rem}
+  h2, .h2 {font-size: 3.6rem}
+  h3, .h3 {font-size: 2.8rem}
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+ul, ol {
+  margin: 0 0 2em 2em;
+  padding: 0;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+li {
+  margin: 0 0 .5em;
+}
+
+blockquote {
+  font-style: italic;
+  border-left: solid 5px var(--grey02);
+  padding: .5em 0 .5em 1em;
+  margin: 0 0 1em 1em;
+}
+
+
+
+input, h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, [contenteditable], .aa_text_selectable {
+  /* enable text selection */
+  -webkit-user-select: text;
+          user-select: text;
+  cursor: text;
+}
+
+.aa_text_not_selectable {
+  -webkit-user-select: none;
+          user-select: none;
+  cursor: default;
+}
+
+
+
+
+
+/*-------*\
+   #APP
+\*-------*/
+
+
+
+.mi {
+  padding: 0 20px;
+}
+
+.mi_ttl {
+  margin-bottom: 0;
+  color: var(--grey02)
+}
+
+.mi_sub {
+  letter-spacing: 20px;
+}
+
+@media (min-width: 768px) {
+  .mi {
+    padding: 0 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mi {
+    padding: 0 60px;
+  }
+}
+
+.mi_hover {
+  cursor: pointer;
+}
+
+.mi_hover:hover, .mi_hover:active {
+  box-shadow: 0 0 0 3px var(--grey02);
+}
+
+.mi_artwork {
+  transition: 1s var(--bezier);
+}
+
+.mi_artwork:hover, .mi_artwork:active {
+  transform: scale(1.1);
+}
+
+
+
+.mi_grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+  .mi_grid_e {
+    width: calc((100% - 40px) / 2);
+    margin: 10px;
+  }
+
+@media (min-width: 480px) {
+  .mi_grid_e {
+    width: calc((100% - 60px) / 3);
+  }
+}
+
+@media (min-width: 768px) {
+  .mi_grid_e {
+    width: calc((100% - 80px) / 4);
+  }
+}
+
+
+
+
+
+/*---------*\
+   #POPUP
+\*---------*/
+
+
+
+.re_popup_bg {
+  position: fixed;
+  z-index: 9;
+  top:    0;
+  right:  0;
+  bottom: 0;
+  left:   0;
+  background-color: rgba(0,0,0,.5);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.touchevents .re_popup_bg {
+  cursor: pointer;
+}
+
+.re_popup {
+  position: fixed;
+  z-index: 10;
+  top:    0;
+  right:  0;
+  bottom: 0;
+  left:   0;
+  font-size: 0;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+          overflow-scrolling: touch;
+}
+
+  .re_popup:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+
+  .re_popup_ {
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 20px);
+    max-width: 360px;
+    margin: 60px 0;
+    padding: 15px 20px 30px;
+    border-radius: 5px;
+    border: solid 1px var(--grey02);
+    font-size: 1.4rem;
+    background-color: #fff;
+    box-shadow: var(--card-shadow);
+    animation: zoom-in .5s var(--bezier) forwards;
+    pointer-events: auto;
+  }
+
+  .big > .re_popup_ {
+    max-width: 900px;
+  }
+
+  .medium > .re_popup_ {
+    max-width: 720px;
+  }
+
+    .re_popup_close {
+      position: absolute;
+      top:  10px;
+      left: 10px;
+    }
+
+    .re_popup_wide {
+      margin: 0 -20px;
+      padding: 0 15px;
+    }
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 380px) {
+  .re_popup_ {
+    padding: 15px 40px 30px;
+  }
+
+  .re_popup_wide {
+    margin: 0 -40px;
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .re_popup_wide {
+    padding: 0 30px;
+  }
+}
+
+
+
+
+
+/*---------*\
+   #INPUT
+\*---------*/
+
+
+
+.re_input, .re_textarea {
+  min-height: 40px;
+  margin-bottom: 5px;
+  padding: 0 15px;
+  box-shadow: var(--box-shadow);
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  background-color: transparent;
+  transition: box-shadow .1s;
+}
+
+.re_textarea {
+  min-height: 100px;
+  padding: 10px 15px;
+}
+
+.re_input-s {
+  min-height: 30px;
+}
+
+.re_input:hover, .re_input:active, .re_textarea:hover, .re_textarea:active {
+  box-shadow: var(--hover-shadow)
+}
+
+.re_input:focus, .re_textarea:focus {
+  box-shadow: var(--color-shadow)
+}
+
+
+
+
+
+/*----------*\
+   #ALIGN
+\*----------*/
+
+
+
+.aa_pull--left {float: left}
+.aa_pull--right {float: right}
+
+@media (min-width: 768px) {
+  .aa_pull--left-s {float: left}
+  .aa_pull--right-s {float: right}
+}
+
+@media (min-width: 1024px) {
+  .aa_pull--left-m {float: left}
+  .aa_pull--right-m {float: right}
+}
+
+@media (min-width: 1280px) {
+  .aa_pull--left-l {float: left}
+  .aa_pull--right-l {float: right}
+}
+
+
+
+.aa_clearfix:before, .aa_clearfix:after {content: ""; display: table}
+.aa_clearfix:after {clear: both}
+
+
+
+.aa_clear {clear: both}
+.aa_clear-left {clear: left}
+.aa_clear-right {clear: right}
+
+/* clear below screen sizes */
+@media (max-width: 481px) {
+  .aa_clear--xs {clear: both}
+}
+
+
+
+
+
+/*-----------*\
+   #OPACITY
+\*-----------*/
+
+
+
+.aa_opacity--0 {opacity: 0}
+.aa_opacity--01 {opacity: .1;}
+.aa_opacity--02 {opacity: .2;}
+.aa_opacity--03 {opacity: .3;}
+.aa_opacity--04 {opacity: .4}
+.aa_opacity--05 {opacity: .5}
+.aa_opacity--06 {opacity: .6}
+.aa_opacity--07 {opacity: .7}
+.aa_opacity--08 {opacity: .8}
+.aa_opacity--09 {opacity: .9}
+.aa_opacity--1 {opacity: 1}
+
+.aa_opacity--05-hover {transition: opacity .1s}
+
+:hover > .aa_opacity--05-hover, :active > .aa_opacity--05-hover {opacity: .5}
+
+
+
+
+
+/*------------------*\
+   #TEXT FORMATTING
+\*------------------*/
+
+
+
+.aa_text--base, .at__text--base {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.aa_text--condensed, .at__text--condensed {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.aa_text--display, .at__text--display {
+  font-family: 'Playfair Display', serif;
+}
+
+
+
+.aa_text--left {text-align: left}
+.aa_text--right {text-align: right}
+.aa_text--center {text-align: center}
+.aa_text--justify {text-align: justify}
+.aa_text--nowrap {white-space: nowrap}
+.aa_text--wrap {white-space: normal}
+.aa_text--lowercase {text-transform: lowercase}
+.aa_text--uppercase {text-transform: uppercase}
+.aa_text--capitalize {text-transform: capitalize}
+
+
+
+.aa_text--thin {font-weight: 100}
+.aa_text--light {font-weight: 300}
+.aa_text--normal {font-weight: 400}
+.aa_text--medium {font-weight: 500}
+.aa_text--bold {font-weight: 700}
+.aa_text--black {font-weight: 900}
+
+.aa_text--italic {font-style: italic}
+
+
+
+.aa_text--0 {font-size: 0}
+.aa_text--08 {font-size: 0.8rem}
+.aa_text--10 {font-size: 1rem}
+.aa_text--12 {font-size: 1.2rem}
+.aa_text--14 {font-size: 1.4rem}
+.aa_text--16 {font-size: 1.6rem}
+.aa_text--18 {font-size: 1.8rem}
+.aa_text--20 {font-size: 2.0rem}
+.aa_text--22 {font-size: 2.2rem}
+.aa_text--24 {font-size: 2.4rem}
+.aa_text--26 {font-size: 2.6rem}
+.aa_text--28 {font-size: 2.8rem}
+.aa_text--32 {font-size: 3.2rem}
+.aa_text--36 {font-size: 3.6rem}
+.aa_text--42 {font-size: 4.2rem}
+.aa_text--50 {font-size: 5rem}
+.aa_text--100 {font-size: 10rem}
+
+@media (min-width: 768px) {
+  .aa_text--16-s {font-size: 1.6rem}
+}
+
+@media (min-width: 1280px) {
+  .aa_text--left-l {text-align: left}
+}
+
+
+.aa_text--25p {font-size: 25%}
+.aa_text--50p {font-size: 50%}
+.aa_text--75p {font-size: 75%}
+
+
+
+.aa_lineh-10 {line-height: 1}
+.aa_lineh-11 {line-height: 1.1}
+.aa_lineh-12 {line-height: 1.2}
+.aa_lineh-15 {line-height: 1.5}
+.aa_lineh-20 {line-height: 2}
+
+
+
+.aa_text--truncate, .aa_truncate { /* truncate for one line */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+
+
+/*------------------*\
+   #BOX FORMATTING
+\*------------------*/
+
+
+
+.aa_display--block {display: block}
+.aa_display--inline {display: inline-block; vertical-align: top}
+.aa_display--flex {display: flex}
+
+.aa_flex-wrap {flex-wrap: wrap}
+.aa_flex-grow--1 {flex-grow: 1; min-width: 0}
+.aa_noshrink {flex-shrink: 0}
+
+.aa_align-top {vertical-align: top}
+.aa_align-middle {vertical-align: middle}
+.aa_align-center {align-items: center}
+.aa_justify-center {justify-content: center}
+.aa_justify-between {justify-content: space-between}
+
+@media (min-width: 768px) {
+  .aa_display--flex-s {display: flex}
+}
+
+@media (min-width: 1024px) {
+  .aa_display--flex-m {display: flex}
+}
+
+@media (min-width: 1280px) {
+  .aa_display--flex-l {display: flex}
+}
+
+
+.aa_table {
+  min-width: 600px;
+  border: solid 1px;
+  font-size: 0;
+}
+
+  .aa_table_row {
+    display: flex;
+  }
+
+    .aa_table_cell {
+      padding: 5px;
+      box-shadow: -1px -1px;
+      font-size: 1.4rem;
+    }
+
+
+.aa_height--auto {height: auto}
+.aa_height--100 {height: 100%}
+.aa_height--50 {height: 50%}
+
+.aa_width--10 {width: 10%}
+.aa_width--16 {width: 16.66667%}
+.aa_width--20 {width: 20%}
+.aa_width--25 {width: 25%}
+.aa_width--30 {width: 30%}
+.aa_width--33 {width: 33.33337%}
+.aa_width--40 {width: 40%}
+.aa_width--50 {width: 50%}
+.aa_width--60 {width: 60%}
+.aa_width--66 {width: 66.66667%}
+.aa_width--70 {width: 70%}
+.aa_width--75 {width: 75%}
+.aa_width--80 {width: 80%}
+.aa_width--90 {width: 90%}
+.aa_width--100 {width: 100%}
+.aa_width--150 {width: 150%}
+.aa_width--200 {width: 200%}
+
+@media (min-width: 480px) {
+  .aa_width--10-xs {width: 10%}
+  .aa_width--16-xs {width: 16.66667%}
+  .aa_width--20-xs {width: 20%}
+  .aa_width--25-xs {width: 25%}
+  .aa_width--30-xs {width: 30%}
+  .aa_width--33-xs {width: 33.33337%}
+  .aa_width--40-xs {width: 40%}
+  .aa_width--50-xs {width: 50%}
+  .aa_width--60-xs {width: 60%}
+  .aa_width--66-xs {width: 66.66667%}
+  .aa_width--70-xs {width: 70%}
+  .aa_width--75-xs {width: 75%}
+  .aa_width--80-xs {width: 80%}
+  .aa_width--90-xs {width: 90%}
+  .aa_width--100-xs {width: 100%}
+}
+
+@media (min-width: 768px) {
+  .aa_width--10-s {width: 10%}
+  .aa_width--16-s {width: 16.66667%}
+  .aa_width--20-s {width: 20%}
+  .aa_width--25-s {width: 25%}
+  .aa_width--30-s {width: 30%}
+  .aa_width--33-s {width: 33.33337%}
+  .aa_width--40-s {width: 40%}
+  .aa_width--50-s {width: 50%}
+  .aa_width--60-s {width: 60%}
+  .aa_width--66-s {width: 66.66667%}
+  .aa_width--70-s {width: 70%}
+  .aa_width--75-s {width: 75%}
+  .aa_width--80-s {width: 80%}
+  .aa_width--90-s {width: 90%}
+  .aa_width--100-s {width: 100%}
+}
+
+@media (min-width: 1024px) {
+  .aa_width--10-m {width: 10%}
+  .aa_width--16-m {width: 16.66667%}
+  .aa_width--20-m {width: 20%}
+  .aa_width--25-m {width: 25%}
+  .aa_width--30-m {width: 30%}
+  .aa_width--33-m {width: 33.33337%}
+  .aa_width--40-m {width: 40%}
+  .aa_width--50-m {width: 50%}
+  .aa_width--60-m {width: 60%}
+  .aa_width--66-m {width: 66.66667%}
+  .aa_width--70-m {width: 70%}
+  .aa_width--75-m {width: 75%}
+  .aa_width--80-m {width: 80%}
+  .aa_width--90-m {width: 90%}
+  .aa_width--100-m {width: 100%}
+}
+
+@media (min-width: 1440px) {
+  .aa_width--10-l {width: 10%}
+  .aa_width--16-l {width: 16.66667%}
+  .aa_width--20-l {width: 20%}
+  .aa_width--25-l {width: 25%}
+  .aa_width--30-l {width: 30%}
+  .aa_width--33-l {width: 33.33337%}
+  .aa_width--40-l {width: 40%}
+  .aa_width--50-l {width: 50%}
+  .aa_width--60-l {width: 60%}
+  .aa_width--66-l {width: 66.66667%}
+  .aa_width--70-l {width: 70%}
+  .aa_width--75-l {width: 75%}
+  .aa_width--80-l {width: 80%}
+  .aa_width--90-l {width: 90%}
+  .aa_width--100-l {width: 100%}
+}
+
+@media (min-width: 1680px) {
+  .aa_width--10-xl {width: 10%}
+  .aa_width--16-xl {width: 16.66667%}
+  .aa_width--20-xl {width: 20%}
+  .aa_width--25-xl {width: 25%}
+  .aa_width--30-xl {width: 30%}
+  .aa_width--33-xl {width: 33.33337%}
+  .aa_width--40-xl {width: 40%}
+  .aa_width--50-xl {width: 50%}
+  .aa_width--60-xl {width: 60%}
+  .aa_width--66-xl {width: 66.66667%}
+  .aa_width--70-xl {width: 70%}
+  .aa_width--75-xl {width: 75%}
+  .aa_width--80-xl {width: 80%}
+  .aa_width--90-xl {width: 90%}
+  .aa_width--100-xl {width: 100%}
+}
+
+.aa_wh-50 {width: 50px; height: 50px}
+.aa_wh-100 {width: 100px; height: 100px}
+
+.aa_w-10 {width: 10px}
+.aa_w-20 {width: 20px}
+.aa_w-30 {width: 30px}
+.aa_w-40 {width: 40px}
+.aa_w-50 {width: 50px}
+.aa_w-60 {width: 60px}
+.aa_w-70 {width: 70px}
+.aa_w-80 {width: 80px}
+.aa_w-90 {width: 90px}
+.aa_w-100 {width: 100px}
+.aa_w-120 {width: 120px}
+.aa_w-150 {width: 150px}
+.aa_w-200 {width: 200px}
+.aa_w-300 {width: 300px}
+
+.aa_minw-70 {min-width: 70px}
+.aa_minw-50 {min-width: 50px}
+
+.aa_maxw-70 {max-width: 70px}
+.aa_maxw-80 {max-width: 80px}
+.aa_maxw-100 {max-width: 100px}
+.aa_maxw-150 {max-width: 150px}
+.aa_maxw-200 {max-width: 200px}
+.aa_maxw-300 {max-width: 300px}
+.aa_maxw-400 {max-width: 400px}
+.aa_maxw-500 {max-width: 500px}
+.aa_maxw-600 {max-width: 600px}
+.aa_maxw-768 {max-width: 768px}
+.aa_maxw-1024 {max-width: 1024px}
+
+.aa_h-50 {height: 50px}
+
+.aa_maxh-70vh {max-height: 70vh}
+
+@media (min-width: 1280px) {
+  .aa_w-70-l {width: 70px}
+  .aa_w-80-l {width: 80px}
+}
+
+
+
+.aa_position--relative {position: relative}
+.aa_position--absolute {position: absolute}
+.aa_z-index--1 {z-index: 1}
+.aa_z-index--2 {z-index: 2}
+.aa_z-index--3 {z-index: 3}
+.aa_z-index--4 {z-index: 4}
+.aa_z-index--5 {z-index: 5}
+
+
+
+.aa_stick {
+  display: block;
+  position: -webkit-sticky;
+  position:         sticky;
+  top: 0;
+  z-index: 1;
+  transform: translate3d(0,0,0);
+}
+
+.aa_stick-btm {
+  top: auto;
+  bottom: 0;
+}
+
+
+
+.aa_top-0 {top: 0}
+.aa_right-0 {right: 0}
+.aa_bottom-0 {bottom: 0}
+.aa_left-0 {left: 0}
+
+
+
+.aa_scroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+          overflow-scrolling: touch;
+}
+
+.aa_scroll-side, .aa_scroll-btm {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.aa_scroll-both {
+  overflow-x: auto;
+}
+
+
+
+.aa_cursor-pointer {cursor: pointer}
+.aa_cursor-wait {cursor: wait}
+.aa_cursor-text {cursor: text}
+.aa_nopointer {pointer-events: none}
+
+
+
+.aa_noverflow {overflow: hidden}
+
+
+
+.aa_margin--0, .aa_nomargin {margin: 0}
+
+
+
+.aa_margin-lr---15 {margin-left: -15px;margin-right: -15px}
+.aa_margin-lr--auto {margin-left:  auto;margin-right: auto}
+.aa_margin-lr--5 {margin-left:  5px;margin-right: 5px}
+.aa_margin-lr--10 {margin-left:  10px;margin-right: 10px}
+.aa_margin-lr--15 {margin-left:  15px;margin-right: 15px}
+.aa_margin-lr--20 {margin-left:  20px;margin-right: 20px}
+.aa_margin-lr--30 {margin-left:  30px;margin-right: 30px}
+.aa_margin-lr--40 {margin-left:  40px;margin-right: 40px}
+.aa_margin-lr--50 {margin-left:  50px;margin-right: 50px}
+
+
+
+.aa_margin-l---15 {margin-left: -15px}
+.aa_margin-r---5 {margin-right: -5px}
+.aa_margin-l--5 {margin-left: 5px}
+.aa_margin-r--5 {margin-right: 5px}
+.aa_margin-l--10 {margin-left: 10px}
+.aa_margin-r--10 {margin-right: 10px}
+.aa_margin-l--15 {margin-left: 15px}
+.aa_margin-r--15 {margin-right: 15px}
+.aa_margin-l--20 {margin-left: 20px}
+.aa_margin-r--20 {margin-right: 20px}
+.aa_margin-l--25 {margin-left: 25px}
+.aa_margin-r--25 {margin-right: 25px}
+.aa_margin-l--30 {margin-left: 30px}
+.aa_margin-r--30 {margin-right: 30px}
+.aa_margin-l--40 {margin-left: 40px}
+.aa_margin-r--40 {margin-right: 40px}
+.aa_margin-l--50 {margin-left: 50px}
+.aa_margin-r--50 {margin-right: 50px}
+
+
+
+.aa_margin-tb---20 {margin-top: -20px;margin-bottom: -20px}
+.aa_margin-tb---15 {margin-top: -15px;margin-bottom: -15px}
+.aa_margin-tb---10 {margin-top: -10px;margin-bottom: -10px}
+.aa_margin-tb---5 {margin-top: -5px;margin-bottom: -5px}
+.aa_margin-tb--5 {margin-top: 5px;margin-bottom: 5px}
+.aa_margin-tb--10 {margin-top: 10px;margin-bottom: 10px}
+.aa_margin-tb--15 {margin-top: 15px;margin-bottom: 15px}
+.aa_margin-tb--20 {margin-top: 20px;margin-bottom: 20px}
+.aa_margin-tb--30 {margin-top: 30px;margin-bottom: 30px}
+.aa_margin-tb--40 {margin-top: 40px;margin-bottom: 40px}
+.aa_margin-tb--50 {margin-top: 50px;margin-bottom: 50px;
+}
+
+
+
+.aa_margin-t---20 {margin-top: -20px}
+.aa_margin-b---20 {margin-bottom: -20px}
+.aa_margin-t---15 {margin-top: -15px}
+.aa_margin-b---15 {margin-bottom: -15px}
+.aa_margin-t---10 {margin-top: -10px}
+.aa_margin-b---10 {margin-bottom: -10px}
+.aa_margin-t---5 {margin-top: -5px}
+.aa_margin-b---5 {margin-bottom: -5px}
+.aa_margin-t--0 {margin-top: 0}
+.aa_margin-b--0 {margin-bottom: 0}
+.aa_margin-t--1 {margin-top: 1px}
+.aa_margin-b--1 {margin-bottom: 1px}
+.aa_margin-t--5 {margin-top: 5px}
+.aa_margin-b--5 {margin-bottom: 5px}
+.aa_margin-t--10 {margin-top: 10px}
+.aa_margin-b--10 {margin-bottom: 10px}
+.aa_margin-t--15 {margin-top: 15px}
+.aa_margin-b--15 {margin-bottom: 15px}
+.aa_margin-t--20 {margin-top: 20px}
+.aa_margin-b--20 {margin-bottom: 20px}
+.aa_margin-t--30 {margin-top: 30px}
+.aa_margin-b--30 {margin-bottom: 30px}
+.aa_margin-t--40 {margin-top: 40px}
+.aa_margin-b--40 {margin-bottom: 40px}
+.aa_margin-t--50 {margin-top: 50px}
+.aa_margin-b--50 {margin-bottom: 50px}
+
+
+
+.aa_padding--0 {padding: 0}
+
+
+
+.aa_padding-lr--0 {padding-left: 0;padding-right: 0}
+.aa_padding-lr--5 {padding-left: 5px;padding-right: 5px}
+.aa_padding-lr--10 {padding-left: 10px;padding-right: 10px}
+.aa_padding-lr--15 {padding-left: 15px;padding-right: 15px}
+.aa_padding-lr--20 {padding-left: 20px;padding-right: 20px}
+.aa_padding-lr--30 {padding-left: 30px;padding-right: 30px}
+.aa_padding-lr--40 {padding-left: 40px;padding-right: 40px}
+.aa_padding-lr--50 {padding-left: 40px;padding-right: 40px}
+
+
+
+.aa_padding-l--0 {padding-left: 0}
+.aa_padding-r--0 {padding-right: 0}
+.aa_padding-l--5 {padding-left: 5px}
+.aa_padding-r--5 {padding-right: 5px}
+.aa_padding-l--10 {padding-left: 10px}
+.aa_padding-r--10 {padding-right: 10px}
+.aa_padding-l--15 {padding-left: 15px}
+.aa_padding-r--15 {padding-right: 15px}
+.aa_padding-l--20 {padding-left: 20px}
+.aa_padding-r--20 {padding-right: 20px}
+.aa_padding-l--30 {padding-left: 30px}
+.aa_padding-r--30 {padding-right: 30px}
+.aa_padding-l--40 {padding-left: 40px}
+.aa_padding-r--40 {padding-right: 40px}
+.aa_padding-l--45 {padding-left: 45px}
+.aa_padding-r--45 {padding-right: 45px}
+.aa_padding-l--50 {padding-left: 50px}
+.aa_padding-r--50 {padding-right: 50px}
+
+
+.aa_padding-tb--0 {padding-top: 0;padding-bottom: 0}
+.aa_padding-tb--5 {padding-top: 5px;padding-bottom: 5px}
+.aa_padding-tb--10 {padding-top: 10px;padding-bottom: 10px}
+.aa_padding-tb--15 {padding-top: 15px;padding-bottom: 15px}
+.aa_padding-tb--20 {padding-top: 20px;padding-bottom: 20px}
+.aa_padding-tb--30 {padding-top: 30px;padding-bottom: 30px}
+.aa_padding-tb--40 {padding-top: 40px;padding-bottom: 40px}
+.aa_padding-tb--50 {padding-top: 50px;padding-bottom: 50px}
+
+
+.aa_padding-t--0 {padding-top: 0}
+.aa_padding-b--0 {padding-bottom: 0}
+.aa_padding-t--5 {padding-top: 5px}
+.aa_padding-b--5 {padding-bottom: 5px}
+.aa_padding-t--10 {padding-top: 10px}
+.aa_padding-b--10 {padding-bottom: 10px}
+.aa_padding-t--15 {padding-top: 15px}
+.aa_padding-b--15 {padding-bottom: 15px}
+.aa_padding-t--20 {padding-top: 20px}
+.aa_padding-b--20 {padding-bottom: 20px}
+.aa_padding-t--30 {padding-top: 30px}
+.aa_padding-b--30 {padding-bottom: 30px}
+.aa_padding-t--40 {padding-top: 40px}
+.aa_padding-b--40 {padding-bottom: 40px}
+.aa_padding-t--50 {padding-top: 50px}
+.aa_padding-b--50 {padding-bottom: 50px}
+
+@media (min-width: 1024px) {
+  .aa_padding-tb--15-m {padding-top: 15px;padding-bottom: 15px}
+}
+
+
+.aa_pb {
+  position: relative;
+}
+
+  .aa_pb_e {
+    position: absolute;
+    top:    0;
+    right:  0;
+    bottom: 0;
+    left:   0;
+  }
+
+.aa_pb--05  {padding-bottom:   5%}
+.aa_pb--10  {padding-bottom:  10%}
+.aa_pb--15  {padding-bottom:  15%}
+.aa_pb--20  {padding-bottom:  20%}
+.aa_pb--25  {padding-bottom:  25%}
+.aa_pb--28  {padding-bottom:  28%}
+.aa_pb--30  {padding-bottom:  30%}
+.aa_pb--35  {padding-bottom:  35%}
+.aa_pb--40  {padding-bottom:  40%}
+.aa_pb--45  {padding-bottom:  45%}
+.aa_pb--50  {padding-bottom:  50%}
+.aa_pb--55  {padding-bottom:  55%}
+.aa_pb--60  {padding-bottom:  60%}
+.aa_pb--65  {padding-bottom:  65%}
+.aa_pb--70  {padding-bottom:  70%}
+.aa_pb--75  {padding-bottom:  75%}
+.aa_pb--80  {padding-bottom:  80%}
+.aa_pb--85  {padding-bottom:  85%}
+.aa_pb--90  {padding-bottom:  90%}
+.aa_pb--95  {padding-bottom:  95%}
+.aa_pb--100 {padding-bottom: 100%}
+.aa_pb--105 {padding-bottom: 105%}
+.aa_pb--110 {padding-bottom: 110%}
+.aa_pb--133 {padding-bottom: 133%}
+.aa_pb--150 {padding-bottom: 150%}
+
+@media (min-width: 375px) {
+  .aa_pb--05-xs  {padding-bottom:   5%}
+  .aa_pb--10-xs  {padding-bottom:  10%}
+  .aa_pb--15-xs  {padding-bottom:  15%}
+  .aa_pb--20-xs  {padding-bottom:  20%}
+  .aa_pb--25-xs  {padding-bottom:  25%}
+  .aa_pb--28-xs  {padding-bottom:  28%}
+  .aa_pb--30-xs  {padding-bottom:  30%}
+  .aa_pb--35-xs  {padding-bottom:  35%}
+  .aa_pb--40-xs  {padding-bottom:  40%}
+  .aa_pb--45-xs  {padding-bottom:  45%}
+  .aa_pb--50-xs  {padding-bottom:  50%}
+  .aa_pb--55-xs  {padding-bottom:  55%}
+  .aa_pb--60-xs  {padding-bottom:  60%}
+  .aa_pb--65-xs  {padding-bottom:  65%}
+  .aa_pb--70-xs  {padding-bottom:  70%}
+  .aa_pb--75-xs  {padding-bottom:  75%}
+  .aa_pb--80-xs  {padding-bottom:  80%}
+  .aa_pb--85-xs  {padding-bottom:  85%}
+  .aa_pb--90-xs  {padding-bottom:  90%}
+  .aa_pb--95-xs  {padding-bottom:  95%}
+  .aa_pb--100-xs {padding-bottom: 100%}
+  .aa_pb--105-xs {padding-bottom: 105%}
+  .aa_pb--110-xs {padding-bottom: 110%}
+}
+
+@media (min-width: 480px) {
+  .aa_pb--05-s  {padding-bottom:   5%}
+  .aa_pb--10-s  {padding-bottom:  10%}
+  .aa_pb--15-s  {padding-bottom:  15%}
+  .aa_pb--20-s  {padding-bottom:  20%}
+  .aa_pb--25-s  {padding-bottom:  25%}
+  .aa_pb--28-s  {padding-bottom:  28%}
+  .aa_pb--30-s  {padding-bottom:  30%}
+  .aa_pb--35-s  {padding-bottom:  35%}
+  .aa_pb--40-s  {padding-bottom:  40%}
+  .aa_pb--45-s  {padding-bottom:  45%}
+  .aa_pb--50-s  {padding-bottom:  50%}
+  .aa_pb--55-s  {padding-bottom:  55%}
+  .aa_pb--60-s  {padding-bottom:  60%}
+  .aa_pb--65-s  {padding-bottom:  65%}
+  .aa_pb--70-s  {padding-bottom:  70%}
+  .aa_pb--75-s  {padding-bottom:  75%}
+  .aa_pb--80-s  {padding-bottom:  80%}
+  .aa_pb--85-s  {padding-bottom:  85%}
+  .aa_pb--90-s  {padding-bottom:  90%}
+  .aa_pb--95-s  {padding-bottom:  95%}
+  .aa_pb--100-s {padding-bottom: 100%}
+  .aa_pb--105-s {padding-bottom: 105%}
+  .aa_pb--110-s {padding-bottom: 110%}
+}
+
+@media (min-width: 768px) {
+  .aa_pb--05-m  {padding-bottom:   5%}
+  .aa_pb--10-m  {padding-bottom:  10%}
+  .aa_pb--15-m  {padding-bottom:  15%}
+  .aa_pb--20-m  {padding-bottom:  20%}
+  .aa_pb--25-m  {padding-bottom:  25%}
+  .aa_pb--28-m  {padding-bottom:  28%}
+  .aa_pb--30-m  {padding-bottom:  30%}
+  .aa_pb--35-m  {padding-bottom:  35%}
+  .aa_pb--40-m  {padding-bottom:  40%}
+  .aa_pb--45-m  {padding-bottom:  45%}
+  .aa_pb--50-m  {padding-bottom:  50%}
+  .aa_pb--55-m  {padding-bottom:  55%}
+  .aa_pb--60-m  {padding-bottom:  60%}
+  .aa_pb--65-m  {padding-bottom:  65%}
+  .aa_pb--70-m  {padding-bottom:  70%}
+  .aa_pb--75-m  {padding-bottom:  75%}
+  .aa_pb--80-m  {padding-bottom:  80%}
+  .aa_pb--85-m  {padding-bottom:  85%}
+  .aa_pb--90-m  {padding-bottom:  90%}
+  .aa_pb--95-m  {padding-bottom:  95%}
+  .aa_pb--100-m {padding-bottom: 100%}
+  .aa_pb--105-m {padding-bottom: 105%}
+  .aa_pb--110-m {padding-bottom: 110%}
+}
+
+@media (min-width: 1024px) {
+  .aa_pb--05-l  {padding-bottom:   5%}
+  .aa_pb--10-l  {padding-bottom:  10%}
+  .aa_pb--15-l  {padding-bottom:  15%}
+  .aa_pb--20-l  {padding-bottom:  20%}
+  .aa_pb--25-l  {padding-bottom:  25%}
+  .aa_pb--28-l  {padding-bottom:  28%}
+  .aa_pb--30-l  {padding-bottom:  30%}
+  .aa_pb--35-l  {padding-bottom:  35%}
+  .aa_pb--40-l  {padding-bottom:  40%}
+  .aa_pb--45-l  {padding-bottom:  45%}
+  .aa_pb--50-l  {padding-bottom:  50%}
+  .aa_pb--55-l  {padding-bottom:  55%}
+  .aa_pb--60-l  {padding-bottom:  60%}
+  .aa_pb--65-l  {padding-bottom:  65%}
+  .aa_pb--70-l  {padding-bottom:  70%}
+  .aa_pb--75-l  {padding-bottom:  75%}
+  .aa_pb--80-l  {padding-bottom:  80%}
+  .aa_pb--85-l  {padding-bottom:  85%}
+  .aa_pb--90-l  {padding-bottom:  90%}
+  .aa_pb--95-l  {padding-bottom:  95%}
+  .aa_pb--100-l {padding-bottom: 100%}
+  .aa_pb--105-l {padding-bottom: 105%}
+  .aa_pb--110-l {padding-bottom: 110%}
+}
+
+
+
+
+
+/*----------*\
+   #COLORS
+\*----------*/
+
+
+
+
+.aa_text-white--1, .aa_text-white--1 a {
+  color: rgba(255,255,255,1);
+}
+
+.aa_text-white--08, .aa_text-white--08 a {
+  color: rgba(255,255,255,.8);
+}
+
+
+
+.aa_bg-000--1, .aa_bgc-black  {background-color: rgba(0,0,0, 1);}
+.aa_bg-888--1, .aa_bgc-grey  {background-color: rgba(136,136,136, 1);}
+.aa_bg-888--08 {background-color: rgba(136,136,136,.8);}
+.aa_bg-888--06 {background-color: rgba(136,136,136,.6);}
+.aa_bg-888--04 {background-color: rgba(136,136,136,.4);}
+.aa_bg-888--02 {background-color: rgba(136,136,136,.2);}
+
+.aa_palette-1 {background-color: #c62828}
+.aa_palette-2 {background-color: #AD1457}
+.aa_palette-3 {background-color: #6A1B9A}
+.aa_palette-4 {background-color: #4527A0}
+.aa_palette-5 {background-color: #283593}
+.aa_palette-6 {background-color: #1565C0}
+.aa_palette-7 {background-color: #0277BD}
+.aa_palette-8 {background-color: #00838F}
+.aa_palette-9 {background-color: #00695C}
+.aa_palette-10 {background-color: #2E7D32}
+.aa_palette-11 {background-color: #558B2F}
+.aa_palette-12 {background-color: #9E9D24}
+.aa_palette-13 {background-color: #827717}
+.aa_palette-14 {background-color: #F9A825}
+.aa_palette-15 {background-color: #FF8F00}
+.aa_palette-16 {background-color: #EF6C00}
+.aa_palette-17 {background-color: #D84315}
+.aa_palette-18 {background-color: #4E342E}
+.aa_palette-19 {background-color: #424242}
+.aa_palette-20 {background-color: #37474F}
+
+
+.aa_grad-0 {background: linear-gradient(45deg, #24c6dc, #514a9d)}
+.aa_grad-1 {background: linear-gradient(45deg, #1cd8d2, #93edc7)}
+.aa_grad-2 {background: linear-gradient(45deg, #5c258d, #4389a2)}
+.aa_grad-3 {background: linear-gradient(45deg, #134e5e, #71b280)}
+.aa_grad-4 {background: linear-gradient(45deg, #4776e6, #8e54e9)}
+.aa_grad-5 {background: linear-gradient(45deg, #ff8008, #ffc837)}
+.aa_grad-6 {background: linear-gradient(45deg, #1d976c, #93f9b9)}
+.aa_grad-7 {background: linear-gradient(45deg, #eb3349, #f45c43)}
+.aa_grad-8 {background: linear-gradient(45deg, #aa076b, #61045f)}
+.aa_grad-9 {background: linear-gradient(45deg, #dce35b, #45b649)}
+
+
+
+.aa_txtc-white {color: #fff}
+.aa_txtc-black {color: #000}
+.aa_txtc-main {color: var(--color1)}
+.aa_txtc-grey {color: var(--grey)}
+
+
+
+
+
+/*-----------------*\
+   #IMG CONTAINER
+\*-----------------*/
+
+
+
+img.aa_img,
+.aa_img > img {
+  vertical-align: top;
+  width:  100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+img.aa_img--contain,
+.aa_img--contain > img {
+  object-fit: contain;
+}
+
+img.aa_img--left,
+.aa_img--left > img {
+  object-position: left;
+}
+
+img.aa_auto {
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
+/*--------------------*\
+   #BG IMG CONTAINER
+\*--------------------*/
+
+
+
+.aa_bg {
+  overflow: hidden;
+  -webkit-transform: translate3d(0,0,0);
+          transform: translate3d(0,0,0);
+}
+
+  .aa_bg__ {
+    height: 100%;
+    background: no-repeat center;
+    background-size:     cover;
+    -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+  }
+
+  .aa_bg__--abs {
+    position: absolute;
+    top:    0;
+    right:  0;
+    bottom: 0;
+    left:   0;
+    height: auto;
+  }
+
+
+
+
+
+/*--------------*\
+   #HOVER INFO
+\*--------------*/
+
+
+.aa_tip {
+  position: relative;
+}
+
+.aa_tip-abs {
+  position: absolute;
+}
+
+  .aa_tip:after {
+    content: attr(data-tip);
+    position: absolute;
+    z-index: 5;
+    padding: 3px 5px;
+    border-radius: 3px;
+    opacity: 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.25;
+    white-space: nowrap;
+    color: rgba(255,255,255,.5);
+    background-color: #333;
+    transform: translate3d(0,0,0);
+    transition: opacity .3s;
+    pointer-events: none;
+  }
+
+  .aa_tip-show-s:after {
+    display: none;
+  }
+
+  .aa_tip:hover:after, .aa_tip:active:after {
+    transition-delay: .5s;
+    opacity: 1;
+  }
+
+  .aa_tip-100:after {
+    width: 100px;
+    white-space: initial;
+  }
+
+  .aa_tip-tl:after, .aa_tip-tr:after, .aa_tip-tc:after {
+    bottom: 100%;
+    margin-bottom: 4px;
+  }
+
+  .aa_tip-tl:after, .aa_tip-bl:after {left: 0}
+  .aa_tip-tr:after, .aa_tip-br:after {right: 0}
+  .aa_tip-tc:after, .aa_tip-bc:after {left: 50%; transform: translate3d(-50%,0,0)}
+
+  .aa_tip-bl:after, .aa_tip-br:after, .aa_tip-bc:after {
+    top: 100%;
+    margin-top: 4px;
+  }
+
+  .aa_tip-lt:after, .aa_tip-lb:after, .aa_tip-lc:after {
+    right: 100%;
+    margin-right: 4px;
+  }
+
+  .aa_tip-lt:after, .aa_tip-rt:after {top: 0}
+  .aa_tip-lb:after, .aa_tip-rb:after {bottom: 0}
+  .aa_tip-lc:after, .aa_tip-rc:after {top: 50%; transform: translate3d(0,-50%,0)}
+
+  .aa_tip-rt:after, .aa_tip-rb:after, .aa_tip-rc:after {
+    left: 100%;
+    margin-left: 4px;
+  }
+
+@media (min-width: 768px) {
+  .aa_tip-show-s:after {
+    display: block;
+  }
+}
+
+
+
+/*-----------------*\
+   #MISCELLANEOUS
+\*-----------------*/
+
+
+
+.aa_filter-greyscale {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.dark .aa_multiply-dark {
+  mix-blend-mode: multiply;
+}
+
+
+
+
+
+/*--------------*\
+   #VISIBILITY
+\*--------------*/
+
+
+
+.aa_hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.touchevents .aa_hide--touchdevice, .aa_hide--only-child:only-child {
+  display: none;
+}
+
+.aa_invisible {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+:hover > .aa_hide--hover, :active > .aa_hide--hover, .aa_hover:hover .aa_hide--hover, .aa_hover:active .aa_hide--hover {
+  display: none;
+}
+
+/* hide above these screen sizes */
+@media (min-width: 480px) {
+  .aa_hide--xs {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .aa_hide--s {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .aa_hide--m {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .aa_hide--l {
+    display: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  .aa_hide--xl {
+    display: none;
+  }
+}
+
+
+.aa_show--only-child{
+  display: none;
+}
+
+.aa_show--only-child:only-child {
+  display: block;
+}
+
+.aa_show--hover {
+  display: none;
+}
+
+:hover > .aa_show--hover, :active > .aa_show--hover, .aa_hover:hover .aa_show--hover, .aa_hover:active .aa_show--hover {
+  display: initial;
+}
+
+/* show above these screen sizes + 1px */
+@media (max-width: 374px) {
+  .aa_show--xxs {
+    display: none;
+  }
+}
+
+@media (max-width: 479px) {
+  .aa_show--xs {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .aa_show--s {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .aa_show--m {
+    display: none;
+  }
+}
+
+@media (max-width: 1279px) {
+  .aa_show--l {
+    display: none;
+  }
+}
+
+@media (max-width: 1439px) {
+  .aa_show--xl {
+    display: none;
+  }
+}
+
+
+
+
+
+/*---------*\
+   #ICONS
+\*---------*/
+
+
+
+@font-face {
+  font-family: "music";
+  src:url("/fonts/music.eot?v01");
+  src:url("/fonts/music.eot?#iefix") format("embedded-opentype"),
+  url("/fonts/music.woff?v01") format("woff"),
+  url("/fonts/music.ttf?v01") format("truetype"),
+  url("/fonts/music.svg#music") format("svg");
+  font-weight: normal;
+  font-style:  normal;
+}
+
+[data-mi]:before {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: "music";
+  content: attr(data-mi);
+  font-style:   normal;
+  font-weight:  normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing:  antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="mi-"]:before, [class*=" mi-"]:before {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: "music";
+  font-style:   normal;
+  font-weight:  normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: inherit;
+  -webkit-font-smoothing:  antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mi-no-align:before {
+  vertical-align: initial;
+}
+
+@media speech {
+  [data-mi]:before, [class^="mi-"]:before, [class*=" mi-"]:before {
+    speak: none;
+  }
+}
+
+.mi-add:before {
+  content: "\61";
+}
+.mi-delete:before {
+  content: "\62";
+}
+.mi-list:before {
+  content: "\63";
+}
+.mi-grid:before {
+  content: "\64";
+}

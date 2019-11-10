@@ -1,0 +1,51 @@
+<div class="aa_maxw-1024 aa_margin-lr--auto aa_margin-t--50 aa_padding-t--50">
+  {{#with model as |album|}}
+    <div class="aa_clear aa_clearfix">
+      <div class="aa_margin-b--30 aa_width--50-s aa_pull--left-s aa_margin-r--30">
+        <div class="aa_pb aa_pb--100 aa_margin-b--5">
+          <div class="aa_pb_e aa_noverflow">
+            <img src="{{album.artwork}}" class="aa_img">
+          </div>
+        </div>
+
+        <div class="aa_text--24 aa_text--bold">{{album.name}}</div>
+
+        <button {{action 'toggleProperty' 'infoOpen'}} class="mi_hover aa_bgc-grey aa_padding-lr--10 aa_txtc-white">edit</button>
+      </div>
+
+      <div class="aa_noverflow aa_margin-b--50">
+        <div class="aa_padding-b--10">
+          <div class="aa_text--12 aa_text--light">artist</div>
+
+          <div class="aa_text--16 aa_text--bold">{{album.artist}}</div>
+        </div>
+
+        <div class="aa_padding-tb--10">
+          <div class="aa_text--12 aa_text--light">released</div>
+
+          <div class="aa_text--16 aa_text--bold">{{moment-format album.released 'YYYY.MM.DD'}}</div>
+        </div>
+
+        <div class="aa_padding-tb--10">
+          <div class="aa_text--12 aa_text--light">genres</div>
+
+          <div class="aa_text--16 aa_text--bold">{{album.genresString}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aa_padding-b--50">
+      {{#each album.tracks as |track|}}
+        <div class="aa_display--flex aa_text--16 aa_padding-tb--10">
+          <div class="aa_flex-grow--1 aa_text--bold">{{track.name}}</div>
+
+          <div>{{track.readableLength}}</div>
+        </div>
+      {{/each}}
+    </div>
+  {{/with}}
+</div>
+
+{{#if infoOpen}}
+  {{album-info infoOpen=infoOpen album=model}}
+{{/if}}

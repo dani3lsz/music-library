@@ -1,0 +1,62 @@
+<div class="re_popup_bg"></div>
+
+<div class="re_popup">
+  <div class="re_popup_ aa_position--relative">
+    <button {{action 'toggleProperty' 'infoOpen'}} class="re_popup_close mi-delete aa_txtc-main"></button>
+
+    <div class="aa_text--12 aa_text--bold">{{if isNew 'new album' 'edit album'}}</div>
+
+    <div class="re_popup_wide aa_text--left">
+      {{#file-drop onChange=(action 'newArtwork')}}
+        <div class="aa_pb aa_pb--100 aa_margin-b--30 aa_cursor-pointer">
+          <div class="aa_pb_e aa_noverflow">
+            <img src="{{album.artwork}}" class="aa_img">
+          </div>
+        </div>
+      {{/file-drop}}
+
+      <div class="aa_text--12 aa_text--light">Name</div>
+
+      {{input value=album.name placeholder='Album name' class='re_input aa_width--100'}}
+
+      <div class="aa_text--12 aa_text--light aa_margin-t--15">Artist</div>
+
+      {{input value=album.artist placeholder='Artist' class='re_input aa_width--100'}}
+
+      <div class="aa_text--12 aa_text--light aa_margin-t--15">Genres (comma separated)</div>
+
+      {{input value=album.genresString placeholder='Genres' class='re_input aa_width--100'}}
+    </div>
+
+    <div class="aa_text--12 aa_text--bold aa_margin-t--50">Tracks</div>
+
+    <div class="re_popup_wide aa_text--left">
+      <div class="aa_text--12 aa_text--light">New track</div>
+
+      <div class="aa_position--relative">
+        {{#if newTrack}}
+          <button {{action 'newTrack' newTrack}}
+            class="mi-add aa_text--24 aa_padding-lr--5 aa_position--absolute aa_right-0 aa_top-0 aa_txtc-main"></button>
+        {{/if}}
+
+        {{input value=newTrack placeholder='Track name 3:11' class='re_input aa_width--100'}}
+      </div>
+
+      {{#each album.tracks as |track|}}
+        <div class="aa_display--flex aa_text--16 aa_padding-tb--10">
+          <div class="aa_flex-grow--1 aa_text--bold">{{track.name}}</div>
+
+          <div>{{track.readableLength}}</div>
+        </div>
+      {{/each}}
+    </div>
+
+    <div class="re_popup_wide aa_stick aa_stick-btm aa_padding-b--10">
+      <button {{action 'toggleProperty' 'infoOpen'}} class="mi_hover aa_bgc-grey aa_width--100 aa_margin-t--30 aa_padding-tb--10 aa_txtc-white">save</button>
+
+      {{#if isNew}}
+        <button {{action 'cancel'}} class="mi_hover aa_bgc-grey aa_width--100 aa_padding-tb--10 aa_txtc-white aa_margin-t--5">cancel</button>
+      {{/if}}
+    </div>
+  </div>
+</div>

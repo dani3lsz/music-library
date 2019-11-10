@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'music-library',
+    podModulePrefix: 'music-library/features',
     environment,
     rootURL: '/',
     locationType: 'auto',
