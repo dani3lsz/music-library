@@ -12,7 +12,7 @@ export default Component.extend({
   },
 
   willDestroyElement() {
-    document.getElementById('js-file-input').addEventListener('change',this.get('handleChange'));
+    document.getElementById('js-file-input').removeEventListener('change',this.get('handleChange'));
   },
 
   click(evt) {
