@@ -22,6 +22,8 @@ export default DS.Model.extend({
         if (name.length) genres[name] = true
       });
 
+      this.set('genres',genres);
+
       return value
     }
   })
