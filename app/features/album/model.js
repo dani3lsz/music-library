@@ -8,6 +8,7 @@ export default DS.Model.extend({
   released: DS.attr('date'),
   genres: DS.attr({defaultValue: null}),
   artwork: DS.attr('string'),
+  link: DS.attr('string'),
 
   genresString: computed('genres', {
     get() {
